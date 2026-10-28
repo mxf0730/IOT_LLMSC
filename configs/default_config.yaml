@@ -1,0 +1,34 @@
+simulation:
+  horizon: 30
+  random_seed: 42
+  lead_times:
+    s_to_m: 2
+    m_to_r: 2
+    proc: 1
+  capacities:
+    s1: 120
+    s2: 80
+  costs:
+    holding: 0.5
+    backlog: 2.0
+
+iot_noise:
+  rfid:
+    sigma: 3.0
+    p_bg: 0.05    # 好状态到坏状态转移概率
+    p_gb: 0.60    # 坏状态恢复概率
+  gps:
+    lambda_delay: 1.2
+    sigma_dead: 0.8
+  cold_chain:
+    t_crit: 8.0   # 临界温度 (°C)
+    tau_tol: 2    # 最大容忍越限轮次
+    alpha_spoil: 0.15 # 动力学变质率系数
+
+atwc:
+  gamma_ewma: 0.8
+  kappa_boundary: 2.0
+  lambda_damp: 0.5
+  beta_trust: 0.9
+  eta_scale: 10.0
+  rho_private: 0.6

@@ -1,0 +1,37 @@
+[
+  {
+    "trace_id": "D1_M4_EP102_T12_M",
+    "agent_role": "Manufacturer_M",
+    "protocol": "M4_Full_Transparency",
+    "disruption": "D1_Demand_Shock",
+    "accessible_telemetry": {
+      "rfid_stock_R1": 4.2,
+      "rfid_stock_R2": 3.8,
+      "gps_jitter_lag": 3,
+      "ambient_temp": 9.4
+    },
+    "agent_decision": "EMERGENCY_ORDER_MAX_CAPACITY_120",
+    "agent_dialogue": "Panic detected at downstream retail nodes. Initiating maximum possible reorder to forestall stockout.",
+    "human_annotations": ["Overreaction", "Overreaction", "Overreaction"],
+    "ground_truth_majority_vote": "Overreaction",
+    "llm_judge_prediction": "Overreaction",
+    "is_consistent": true
+  },
+  {
+    "trace_id": "D3_M4_EP045_T08_R1",
+    "agent_role": "Retailer_R1",
+    "protocol": "M4_Full_Transparency",
+    "disruption": "D3_Compound_Shock",
+    "accessible_telemetry": {
+      "rfid_stock_M": 55.0,
+      "gps_delay": 2,
+      "temp_anomaly_signal": "CRITICAL_BREACH"
+    },
+    "agent_decision": "DEFER_ACTION_WAIT_MORE_SIGNALS",
+    "agent_dialogue": "Conflicting telemetry between stock safety and transit breach. Holding current commitments until clarity emerges.",
+    "human_annotations": ["Info. Paralysis", "Info. Paralysis", "Hoarding"],
+    "ground_truth_majority_vote": "Info. Paralysis",
+    "llm_judge_prediction": "Info. Paralysis",
+    "is_consistent": true
+  }
+]
